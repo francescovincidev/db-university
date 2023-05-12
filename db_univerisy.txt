@@ -1,0 +1,44 @@
+# Definizione delle variabili e dimensioni
+
+# Dipartimenti
+id_dipartimento: PRIMARY_KEY int
+nome_dipartimento: varchar(50)
+
+
+# Corsi di Laurea
+id_corso_laurea: PRIMARY_KEY int
+nome_corso: varchar(50)
+id_dipartimento: FOREIGN_KEY int
+
+
+# Corsi
+id_corso: PRIMARY_KEY int 
+nome_corso: varchar(50)
+id_corso_laurea: FOREIGN_KEY int
+
+
+# Insegnanti
+id_insegnante: PRIMARY_KEY int
+nome: varchar(20)
+cognome: varchar(20)
+id_corso: FOREIGN_KEY int
+
+
+# Studenti
+id_studente: PRIMARY_KEY int
+nome: varchar(20)
+cognome: varchar(20)
+matricola: varchar (6) UNIQUE
+id_corso_laurea: FOREIGN_KEY int
+
+
+# Esami
+id_esame: PRIMARY_KEY int
+id_corso: FOREIGN_KEY int
+Data: date
+
+
+# Voti
+id_studente: PRIMARY_KEY FOREIGN_KEY int
+id_esame PRIMARY_KEY FOREIGN_KEY int
+Voto: TINYINT UNSIGNED
